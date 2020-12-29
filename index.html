@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="basic.css">
+    <title>projekt1</title>
+    
+    <script src="blockCollisionAnimation.js"></script>
+    <script src="basic.js"></script>
+    <link rel="shortcut icon" href="#">
+</head>
+<body onload="setUp()">
+    <div class="webTitle">Magicz&pi;e zderze&pi;ia</div>
+    <nav class="navigationMenu">
+
+		<a href="#opis">Opis projektu</a>
+        <a href="#film">Teoria</a>
+        <a href="#technologie">Technologie</a>
+        <a href="#demo">Demo</a>
+
+
+    </nav>
+    <article id="opis" aria-label="article">
+        <header>Opis projektu</header>
+        <p>Zadaniem projektu było zaprazentowanie wybranego zagadnienia z dziedziny matematyki, informatyki, fizyki i zaprezentowanie go z wykorzystaniem grafiki i animacji. Zdecydowałem się na zaprezentowanie niezwykłej zależności jaka występuje pomiędzy liczbą zderzeń dwóch klocków oraz liczbą &pi;. Poniższy film najlepiej opisuje to wspaniałe zagadnienie. Oczywiście zapraszam do odwiedzenia <a target="_blank" href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">kanału</a>  twórcy tego filmu po więcej niesamowitych materiałów.  </p>
+        <video width="900" height="500" controls>
+            <source src="resources/zagadnienie.mp4"  type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </article>
+
+    <article id="film" aria-label="article">
+        <header>Teoria</header>
+        <p>Poniższy film prezentuje teoretyczną stronę wybranego przeze mnie zagadnienia.</p>
+        <video width="900" height="500" controls>
+            <source src="resources/teoria.mp4"  type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </article>
+
+    <article id="technologie" aria-label="article">
+        <header>Wykorzystane technologie</header>
+        <p>W tworzeniu projektu zostały oczywiście następujące technologie: HTML, CSS i JS. Animacja jest stworzona za pomocą elemntu &lt;canvas&gt;. Dodatkowo została wykorzystana technologia WebWorker. Projekt został zrealizowany na przeglądarke Google Chrome.</p>
+    </article>
+
+    <article id="demo" aria-label="article">
+        <header>Demo</header>
+
+        <p>Poniżej możliwe jest samodzielne przekonanie się, że naprawdę jest możliwe uzyskanie kolejnych liczb rozwinięcia dziesiętnego liczby &pi; poprzez zliczanie kolejnych zderzeń dwóch klocków. Masa wewnętrznego(niebieskiego) klocka jest równa 1kg, natomiast masa zewnętrznego(czerwonego) klocka jest możliwa do ustawienia przez. Po każdej zakończonej symulacji zostanie dodany kolejny rekord w tabeli "Analiza wyników", aby lepiej zaobserwować prezentowaną zależność. </p>
+
+        <div class="simulationContainer">
+            <form action="#" id="block_mass_form" name="block_mass_form"  class="simulationForm">
+                <fieldset>
+                    <legend>Ustawienie masy zewnętrznego klocka</legend>
+                    <label for="outside_block_mass">Masa czerwonego klocka[kg]:</label>
+                    <select name="outside_block_mass" id="outside_block_mass" form="block_mass_form">
+                        <option value="0">1</option>
+                        <option value="2">100</option>
+                        <option value="4">10000</option>
+                        <option value="6">1000000</option>
+                        <option value="8">100000000</option>
+                        <option value="10">10000000000</option>
+                        <option value="12">1000000000000</option>
+                        <option value="14">100000000000000</option>
+                    </select><br>
+        
+                    <div class="buttonCenter">
+                        <input type="button" value="Set" id="setButton" onclick="setBlocksMass()"/>
+                    </div>
+                    
+                </fieldset>
+                
+            </form>
+            <div id="CanvasContainer">
+                <audio id="mySound" src="resources/clack.wav" style="display: none;"></audio>
+                <canvas id="demo_canvas" width='1000' height='500'></canvas>
+                <input type="button" id="simulationButton" value="Run" onclick="runSimulation()"/>
+            </div>
+           
+            <div class="results">
+                <table id="result_table">
+                    <caption>Analiza wyników</caption>
+                    <thead>
+                        <tr>
+                            <th>Masa czerwonego klocka [kg]</th>
+                            <th>Masa niebieskiego klocka [kg]</th>
+                            <th>Ilość zderzeń</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+
+    <footer>Author: Michał Kacprzak</footer>
+</body>
+</html>

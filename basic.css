@@ -1,0 +1,183 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: inline;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(250, 204, 204, 0.979);
+  margin:0px;
+  font-family: cursive;
+  font-size: 20px;
+  
+}
+
+.webTitle {
+  letter-spacing: 3px;
+  background-color: #e04237d3;
+  text-align:center;
+  font-size: 50px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+}
+
+nav {
+  display: flex;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav a {
+  letter-spacing: 2px;
+  flex: 1;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+nav a:hover {
+  background-color: rgb(88, 85, 85);
+}
+
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+article header{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.simulationContainer {
+  display: grid;
+  grid-template-columns: 0.6fr 1.2fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "simulationForm CanvasContainer"
+    "results CanvasContainer";
+
+}
+
+
+#CanvasContainer { 
+  grid-area: CanvasContainer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+canvas {
+  background-color: rgba(230, 230, 230, 0.986);
+  border: 1px solid black; 
+}
+
+#simulationButton{
+
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f44336;
+  padding: 15px 32px;
+  margin: 3px 0;
+}
+
+#simulationButton:hover{
+  transform: scale(1.1) perspective(1px)
+}
+
+#simulationButton:disabled{
+  pointer-events: none;
+  color: #c9c2c2;
+  background-color: #ec908a;
+}
+
+.buttonCenter{
+  text-align: center;
+}
+
+#setButton {
+  margin-top: 5px;
+  border-radius: 8px;
+  padding: 2px 18px;
+  font-weight: bold;
+  background-color: rgb(226, 135, 93);
+  font-size: 18px;
+  
+}
+#setButton:hover{
+
+  transform: scale(1.1) perspective(1px)
+}
+
+#setButton:disabled{
+  pointer-events: none;
+  background-color: rgb(219, 155, 126);
+  color: #c9c2c2;
+
+}
+
+.results { grid-area: results; }
+
+.simulationForm { grid-area: simulationForm; }
+
+article {
+  margin: 0 10px;
+}
+input[type=button]:focus {
+  outline: none;
+  box-shadow: none;
+}
+footer {
+  padding: 5px 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+fieldset {
+  background-color: #f44336;
+
+}
+
+legend {
+  background-color: rgb(226, 135, 93);
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+form label {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+form select {
+  margin: 5px;
+  height: 26px;
+}
+
+caption {
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+table {
+  background-color: #f44336;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
+}
